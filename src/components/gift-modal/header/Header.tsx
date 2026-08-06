@@ -1,4 +1,5 @@
-import { observer } from 'mobx-react-lite/src/observer.js'
+import { observer } from 'mobx-react-lite'
+import { useEffect } from 'react'
 import { MODAL_TEXT } from '../../../shared/constants/modal'
 import { giftStore } from '../../../shared/stores/root-store'
 import iconCheckbox from '../assets/checkbox.svg'
@@ -7,7 +8,6 @@ import iconClose from '../assets/close.svg'
 import iconFilter from '../assets/filter.svg'
 import iconTrash from '../assets/trash.svg'
 import s from './Header.module.scss'
-import { useEffect } from 'react'
 
 type Props = {
 	handleClose: () => void
