@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
-import { GiftCard } from './components/gift-modal/Modal'
+import { GiftsModal } from './components/gift-modal/GiftsModal'
+import { giftStore } from './shared/stores/root-store'
 
 function App() {
 	useEffect(() => {
@@ -9,10 +10,37 @@ function App() {
 		tg?.expand()
 	}, [])
 
+	const handleOpenModal = () => {
+		const tg = window.Telegram?.WebApp
+
+		const desktopPlatforms = ['tdesktop', 'weba', 'webk', 'macos']
+		const isDesktop = tg
+			? desktopPlatforms.includes(tg.platform)
+			: true
+
+		if (
+			tg &&
+			!isDesktop &&
+			tg.isVersionAtLeast('8.0') &&
+			!tg.isFullscreen
+		) {
+			tg.requestFullscreen()
+		}
+
+		giftStore.openModal()
+	}
+
 	return (
-		<>
-			<GiftCard />
-		</>
+		<div className="app">
+			<button
+				className="button-open"
+				onClick={handleOpenModal}
+			>
+				Открыть модалку
+			</button>
+
+			<GiftsModal />
+		</div>
 	)
 }
 

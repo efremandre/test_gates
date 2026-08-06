@@ -1,0 +1,14 @@
+.wrapper {
+	flex: 1 1 0;
+	min-height: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	overscroll-behavior: contain;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 113px);
+	gap: 8px;
+	justify-content: center;
+}

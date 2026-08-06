@@ -1,0 +1,70 @@
+.wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+	width: 113px;
+	height: 113px;
+	border-radius: 12px;
+	border: 1px solid transparent;
+	background: url('../assets/bg-card.png') center / cover no-repeat;
+
+	&.active {
+		border-color: #fff;
+	}
+
+	& .header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 4px;
+
+		& .price {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2px;
+			height: 20px;
+			padding: 0 8px 0 6px;
+			font-size: 10px;
+			line-height: 16px;
+			font-weight: 600;
+			border-radius: 12px;
+			background: var(--background-main);
+		}
+
+		.check {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 20px;
+			height: 20px;
+			flex-shrink: 0;
+		}
+	}
+
+	& .image {
+		width: 60px;
+		height: 60px;
+	}
+
+	& .title {
+		display: flex;
+		flex-direction: column;
+		font-weight: 500;
+
+		& .name {
+			font-size: 12px;
+		}
+
+		& .tag {
+			font-size: 8px;
+		}
+	}
+}
